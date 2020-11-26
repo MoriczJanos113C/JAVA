@@ -58,8 +58,18 @@ System.out.println("TÉTELGYAKORLÁS, Eldöntés tétele, KÉSZÍTETTE: Móricz 
         }
        int negativOsszeg=0;
        System.out.print("\n\nNegatív tömb elemei: ");
-       
-        for (int i = 0; i < elemSzam; i++) {
+            if (negativDb > 0){
+                for (int i = 0; i < negativDb; i++) {
+                    System.out.print(negativ[i]+" ");
+                    negativOsszeg = negativOsszeg+negativ[i];
+                }
+            }
+            else {
+                System.out.print("nincs negativ");
+            }
+            
+            
+            for (int i = 0; i < elemSzam; i++) {
             if (negativ[i] % 5 ==0) {
                 szerepelE=true;
             }
@@ -74,19 +84,8 @@ System.out.println("TÉTELGYAKORLÁS, Eldöntés tétele, KÉSZÍTETTE: Móricz 
                 System.out.println("\nA negativ tömbben nem szerepel 5tel oszthato elem");
             }
             System.out.print(szerepelE+" ");
-        
-    
-        
-       
-            if (negativDb > 0){
-                for (int i = 0; i < negativDb; i++) {
-                    System.out.print(negativ[i]+" ");
-                    negativOsszeg = negativOsszeg+negativ[i];
-                }
-            }
-            else {
-                System.out.print("nincs negativ");
-            }
+            
+            
             System.out.println("\nA negatív tömb összege: "+negativOsszeg);
             System.out.println("A negatív tömb átlaga: "+(double) negativOsszeg/negativDb);
     }
