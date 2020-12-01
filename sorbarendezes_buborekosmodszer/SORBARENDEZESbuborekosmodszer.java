@@ -45,8 +45,33 @@ public class SORBARENDEZESbuborekosmodszer {
         for (int i = 0; i < elemSzam; i++) {
             System.out.print(szamok[i]+" ");
         }
+    int negativDb=0;
+       
+       for (int i = 0; i < elemSzam; i++) {
+            if (szamok[i]<0) {
+                negativ[negativDb++]=szamok[i];
+                
+            }
+        }
+    int negativOsszeg=0;
+       System.out.println("\n\nNegatív számok növekvő sorrend szerint: ");
+        
+            if (negativDb > 0){
+                for (int i = 0; i < negativDb-1; i++) {
+                for (int j = 0; j < negativDb-i-1; j++) {
+                if (szamok[j]>szamok[j+1]) {
+                    int temp=szamok[j];
+                    szamok[j]=szamok[j+1];
+                    szamok[j+1]=temp;
+                }
+            }
+                    System.out.print(negativ[i]+" ");
+                    negativOsszeg = negativOsszeg+negativ[i];
+                }
+            }
+            
+            
     }
-    
   
     
 }
