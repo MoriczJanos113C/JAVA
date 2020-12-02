@@ -9,9 +9,7 @@ import java.util.Scanner;
 
 public class SORBARENDEZESbuborekosmodszer {
 
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String[] args) {
         System.out.println("\nSORBARENDEZÉS TÉTELE(buborékos módszer)\n, Készítette:Móricz János Milán 1/13C");
         
