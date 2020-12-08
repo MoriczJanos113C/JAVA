@@ -23,16 +23,19 @@ public class Osszetettfeladat {
         Scanner bemenet = new Scanner(System.in); //Scanner lehivasa
         char valasz = 0;  //betu az elotesztelohoz
         do{
+        //2. feladat
         int darabszam = (int) (Math.random() * 10) + 30; //darabszam meghatározása, mennyi elemu legyen majd a 2 tomb
         
+        //1. feladat
         int szamok1[] = new int[darabszam];
         int szamok2[] = new int[darabszam]; //szamok1,2 tombbének létrehozása és a darabszam határozza meg (amit 31. sortol irtam) az elemeinek tartományát illetve értékeit
-
+        
+        //3. feladat
         for (int i = 0; i < darabszam; i++) {
             szamok1[i] = (int) (Math.random() * -100) + 50;
             szamok2[i] = (int) (Math.random() * -100) + 50; //darabszam tartományának meghatározása (-50tol +50ig)
         }
-        
+        //4. feladat
         System.out.println("\nA szamok1 tömb elemei: ");
         for (int i = 0; i < darabszam; i++) {
             System.out.print(String.format("%,4d", szamok1[i]) + " ");
@@ -41,7 +44,7 @@ public class Osszetettfeladat {
         for (int i = 0; i < darabszam; i++) {
             System.out.print(String.format("%,4d", szamok2[i]) + " "); //szamok1,2 meghatározása
         }
-
+        //5. feladat
         //ottel oszthato szamok meghatározása az ujTombbe
         int ujTomb[] = new int[darabszam];
         int ujTombdb = 0;
@@ -70,7 +73,9 @@ public class Osszetettfeladat {
         for (int i = 0; i < ujTombdb; i++) {
             System.out.print(String.format("%,4d", ujTomb[i]) + " "); //ujTomb kiíratása
         }
+        //idáig az 5. feladat
          
+         //6. feladat
             int legkisebb = ujTomb[0];
             for (int i = 1; i < ujTomb.length; i++) {  //Lekisebb szám az új tömbből
                 if (ujTomb[i] < legkisebb) {
@@ -88,13 +93,14 @@ public class Osszetettfeladat {
             
             System.out.print("\nAz ujTomb legkisebb száma: "+legkisebb); //kiírattam a legnagyobb legkisebb számot az ujTombbol
             
-         
+            //7. feladat         
             if (ujTomb[ujTombdb-1]%ujTomb[0] == 0 ) {
                 System.out.println("\nAz ujtomb legnagyobb eleme a legkisebb elemének a többszöröse");
             }
             else{
                 System.out.println("\nAz ujtomb legnagyobb eleme nem a többszöröse a legkisebb elemével");
             }
+            //9. feladat
             System.out.println("Szeretné újra futtatni a programot? Ha igen akkor: i , Ha nem akkor: n");
             valasz = bemenet.next().charAt(0);
     } while ((valasz == 'i') || (valasz == 'I')); //elotesztelo ciklus betűvel
