@@ -11,7 +11,7 @@
  */
 package osszetettfeladat;
  
-import java.util.Scanner;                 
+import java.util.Scanner;  //scanner létrehozasa               
 
 public class Osszetettfeladat {
 
@@ -20,17 +20,17 @@ public class Osszetettfeladat {
      */
     public static void main(String[] args) {
         System.out.println("\nÖSSZETETT FELADAT, KÉSZÍTETTE: Móricz János Milán 1/13C");
-        Scanner bemenet = new Scanner(System.in);
-        char valasz = 0;
+        Scanner bemenet = new Scanner(System.in); //Scanner lehivasa
+        char valasz = 0;  //betu az elotesztelohoz
         do{
-        int darabszam = (int) (Math.random() * 10) + 30;
+        int darabszam = (int) (Math.random() * 10) + 30; //darabszam meghatározása, mennyi elemu legyen majd a 2 tomb
         
         int szamok1[] = new int[darabszam];
-        int szamok2[] = new int[darabszam];
+        int szamok2[] = new int[darabszam]; //szamok1,2 tombbének létrehozása és a darabszam határozza meg (amit 31. sortol irtam) az elemeinek tartományát illetve értékeit
 
         for (int i = 0; i < darabszam; i++) {
             szamok1[i] = (int) (Math.random() * -100) + 50;
-            szamok2[i] = (int) (Math.random() * -100) + 50;
+            szamok2[i] = (int) (Math.random() * -100) + 50; //darabszam tartományának meghatározása (-50tol +50ig)
         }
         
         System.out.println("\nA szamok1 tömb elemei: ");
@@ -39,10 +39,10 @@ public class Osszetettfeladat {
         }
         System.out.println("\nA szamok2 tömb elemei: ");
         for (int i = 0; i < darabszam; i++) {
-            System.out.print(String.format("%,4d", szamok2[i]) + " ");
+            System.out.print(String.format("%,4d", szamok2[i]) + " "); //szamok1,2 meghatározása
         }
 
-        
+        //ottel oszthato szamok meghatározása az ujTombbol a darabszámok általi számokkal
         int ujTomb[] = new int[darabszam];
         int ujTombdb = 0;
         for (int i = 0; i < darabszam; i++) {
@@ -55,7 +55,7 @@ public class Osszetettfeladat {
 
         }
         
-        
+        //sorbarendezes buborekosmodszerrel
             for (int i = 0; i < ujTombdb-1; i++) {
                 for (int j= 0; j < ujTombdb-i-1; j++) {
                     if (ujTomb[j]>ujTomb[j+1]) {
@@ -70,21 +70,21 @@ public class Osszetettfeladat {
             System.out.print(String.format("%,4d", ujTomb[i]) + " ");
         }
             int legkisebb = ujTomb[0];
-            for (int i = 1; i < ujTomb.length; i++) {  //Legnagyobb szám meghatározása az új tömbből
+            for (int i = 1; i < ujTomb.length; i++) {  //Lekisebb szám az új tömbből
                 if (ujTomb[i] < legkisebb) {
                     legkisebb = ujTomb[i];
                 }
             }
             
             int legnagyobb = ujTomb[0];
-            for (int i = 1; i < ujTomb.length; i++) {  //Legkisebb szám meghatározása az új tömbből
+            for (int i = 1; i < ujTomb.length; i++) {  //Legnagyobb szám az új tömbből
                 if (ujTomb[i] > legnagyobb) {
                     legnagyobb = ujTomb[i];
                 }
             }
             System.out.print("\nAz ujTomb legnagyobb száma: "+legnagyobb);
             
-            System.out.print("\nAz ujTomb legkisebb száma: "+legkisebb);
+            System.out.print("\nAz ujTomb legkisebb száma: "+legkisebb); //kiírattam a legnagyobb legkisebb számot az ujTombbol
             
             if (ujTomb[ujTombdb-1]%ujTomb[0] == 0 ) {
                 System.out.println("\nAz ujtomb legnagyobb eleme a legkisebb elemének a többszöröse");
@@ -94,6 +94,6 @@ public class Osszetettfeladat {
             }
             System.out.println("Szeretné újra futtatni a programot? Ha igen akkor: i , Ha nem akkor: n");
             valasz = bemenet.next().charAt(0);
-    } while ((valasz == 'i') || (valasz == 'I'));
+    } while ((valasz == 'i') || (valasz == 'I')); //elotesztelo ciklus betűvel
 }
 }
