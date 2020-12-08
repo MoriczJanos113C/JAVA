@@ -42,7 +42,7 @@ public class Osszetettfeladat {
             System.out.print(String.format("%,4d", szamok2[i]) + " "); //szamok1,2 meghatározása
         }
 
-        //ottel oszthato szamok meghatározása az ujTombbol a darabszámok általi számokkal
+        //ottel oszthato szamok meghatározása az ujTombbe
         int ujTomb[] = new int[darabszam];
         int ujTombdb = 0;
         for (int i = 0; i < darabszam; i++) {
