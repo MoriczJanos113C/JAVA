@@ -65,10 +65,12 @@ public class Osszetettfeladat {
                 }
             }
             }
+         
         System.out.println("\nAz ujTomb elemei: ");
         for (int i = 0; i < ujTombdb; i++) {
-            System.out.print(String.format("%,4d", ujTomb[i]) + " ");
+            System.out.print(String.format("%,4d", ujTomb[i]) + " "); //ujTomb kiíratása
         }
+         
             int legkisebb = ujTomb[0];
             for (int i = 1; i < ujTomb.length; i++) {  //Lekisebb szám az új tömbből
                 if (ujTomb[i] < legkisebb) {
@@ -86,6 +88,7 @@ public class Osszetettfeladat {
             
             System.out.print("\nAz ujTomb legkisebb száma: "+legkisebb); //kiírattam a legnagyobb legkisebb számot az ujTombbol
             
+         
             if (ujTomb[ujTombdb-1]%ujTomb[0] == 0 ) {
                 System.out.println("\nAz ujtomb legnagyobb eleme a legkisebb elemének a többszöröse");
             }
