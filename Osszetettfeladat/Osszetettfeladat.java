@@ -100,6 +100,13 @@ public class Osszetettfeladat {
             else{
                 System.out.println("\nAz ujtomb legnagyobb eleme nem a többszöröse a legkisebb elemével");
             }
+         //8. feladat
+            for (int i = 0; i < ujTomb.length; i++) {
+            if (ujTomb[i] == 0) {
+                System.out.println("Az ujTomb 0-t tartalmaz");
+                break;
+            }
+        }
             //9. feladat
             System.out.println("Szeretné újra futtatni a programot? Ha igen akkor: i , Ha nem akkor: n");
             valasz = bemenet.next().charAt(0);
