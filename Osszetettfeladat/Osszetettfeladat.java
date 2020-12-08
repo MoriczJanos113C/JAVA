@@ -1,7 +1,13 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+1. Hozz létre két tömböt: szamok1, szamok2 néven!
+2. A tömbök elemszámát is véletlenszám generátorral állítsd elő 10 és 30 között.
+3. Az elemek a -50 és +50 értéktartományba essenek.
+4. Írasd ki a két tömböt egy-egy sorban ügyelve, hogy az elemek helyiérték szerint egymás alá kerüljenek.
+5. Helyezd át a két tömb öttel osztható páros számait egy ujTomb nevű tömbbe, majd írasd ki sorbarendezve.
+6. Írasd ki a legkisebb és legnagyobb számot az ujTomb-ből.
+7. Írasd ki, többszöröse-e a legnagyobb szám a legkisebbnek?
+8. Írasd ki, hogy 0-át tartalmaz-e az ujTomb?
+9. Kérdezd meg, szeretné-e újrafuttatni a felhasználó a programot (i/n)! Ha igen, hajrá...
  */
 package osszetettfeladat;
  
