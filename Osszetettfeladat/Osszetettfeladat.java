@@ -29,8 +29,8 @@ public class Osszetettfeladat {
         int szamok2[] = new int[darabszam];
 
         for (int i = 0; i < darabszam; i++) {
-            szamok1[i] = (int) (Math.random() * -50) + 50;
-            szamok2[i] = (int) (Math.random() * -50) + 50;
+            szamok1[i] = (int) (Math.random() * -100) + 50;
+            szamok2[i] = (int) (Math.random() * -100) + 50;
         }
         
         System.out.println("\nA szamok1 tömb elemei: ");
