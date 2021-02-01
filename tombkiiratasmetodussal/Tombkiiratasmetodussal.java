@@ -17,6 +17,15 @@ public class Tombkiiratasmetodussal {
             System.out.print(String.format("%,4d", tomb[i]) + " ");
         }
         System.out.println();
+        for (int i = 0; i < 10-1; i++) {
+            for (int j = 0; j < 10-i-1; j++) {               
+                if (tomb[j]>tomb[j+1]) {
+                int temp=tomb[j];
+                tomb[j]=tomb[j+1];
+                tomb[j+1]=temp;
+            }
+        }
+        }
     }
     /**
      * @param args the command line arguments
@@ -36,36 +45,11 @@ public class Tombkiiratasmetodussal {
             szamok2[i] = (int) (Math.random() * -200) + 100;
             szamok3[i] = (int) (Math.random() * -200) + 100;
         }
-        for (int i = 0; i < 10-1; i++) {
-            for (int j = 0; j < 10-i-1; j++) {               
-                if (szamok1[j]>szamok1[j+1]) {
-                int temp=szamok1[j];
-                szamok1[j]=szamok1[j+1];
-                szamok1[j+1]=temp;
-            }
-        }
-        }
-        for (int i = 0; i < 10-1; i++) {
-            for (int j = 0; j < 10-i-1; j++) {               
-                if (szamok2[j]>szamok2[j+1]) {
-                int temp=szamok2[j];
-                szamok2[j]=szamok2[j+1];
-                szamok2[j+1]=temp;
-            }
-        }
-        }
-        for (int i = 0; i < 10-1; i++) {
-            for (int j = 0; j < 10-i-1; j++) {               
-                if (szamok3[j]>szamok3[j+1]) {
-                int temp=szamok3[j];
-                szamok3[j]=szamok3[j+1];
-                szamok3[j+1]=temp;
-            }
-        }
-        }
-        
+        System.out.println("\nSzamok1 tömb elemei:");
         kiir(szamok1);
+        System.out.println("\nSzamok2 tömb elemei:");
         kiir(szamok2);
+        System.out.println("\nSzamok3 tömb elemei:");
         kiir(szamok3);
     }
     
