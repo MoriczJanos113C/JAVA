@@ -17,6 +17,9 @@ public class Tombkiiratasmetodussal {
             System.out.print(String.format("%,4d", tomb[i]) + " ");
         }
         System.out.println();
+        
+    }
+    public static void sorbarendez(int []tomb){
         for (int i = 0; i < 10-1; i++) {
             for (int j = 0; j < 10-i-1; j++) {               
                 if (tomb[j]>tomb[j+1]) {
@@ -46,10 +49,13 @@ public class Tombkiiratasmetodussal {
             szamok3[i] = (int) (Math.random() * -200) + 100;
         }
         System.out.println("\nSzamok1 tömb elemei:");
+        sorbarendez(szamok1);
         kiir(szamok1);
         System.out.println("\nSzamok2 tömb elemei:");
+        sorbarendez(szamok2);
         kiir(szamok2);
         System.out.println("\nSzamok3 tömb elemei:");
+        sorbarendez(szamok3);
         kiir(szamok3);
     }
     
