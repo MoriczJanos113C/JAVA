@@ -51,17 +51,17 @@ public class Tombkiiratasmetodussal {
             szamok2[i] = (int) (Math.random() * -200) + 100;
             szamok3[i] = (int) (Math.random() * -200) + 100;
         }
-        System.out.println("\nSzamok1 tömb elemei rendezetten:");
-        sorbarendez(szamok1);
         System.out.println("\nSzamok1 tömb elemei:");
+        sorbarendez(szamok1);
+        System.out.println("\nSzamok1 tömb elemei rendezetten:");
         kiir(szamok1);
-        System.out.println("\nSzamok2 tömb elemei rendezetten:");
-        sorbarendez(szamok2);
         System.out.println("\nSzamok2 tömb elemei:");
+        sorbarendez(szamok2);
+        System.out.println("\nSzamok2 tömb elemei rendezetten:");
         kiir(szamok2);
-        System.out.println("\nSzamok3 tömb elemei rendezetten:");
-        sorbarendez(szamok3);
         System.out.println("\nSzamok3 tömb elemei:");
+        sorbarendez(szamok3);
+        System.out.println("\nSzamok3 tömb elemei rendezetten:");
         kiir(szamok3);
     }
     
