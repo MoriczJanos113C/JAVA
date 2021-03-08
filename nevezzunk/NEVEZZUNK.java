@@ -39,7 +39,7 @@ public class NEVEZZUNK {
         System.out.println("A névben az 1.  szóköz helye: "+szokozindex1);
         System.out.println("----------------------------------------");
         int szokozindex2 = sajatNev.indexOf(' ');
-        System.out.println("A névben a 2. szóköz helye: "+szokozindex2));
+        System.out.println("A névben a 2. szóköz helye: "+szokozindex2);
         System.out.println("----------------------------------------");
         String[] parts = sajatNev.split(" ");
         String kvNev = parts[0];
