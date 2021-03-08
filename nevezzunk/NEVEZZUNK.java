@@ -42,29 +42,24 @@ public class NEVEZZUNK {
         System.out.println("A névben a 2. szóköz helye: "+szokozindex2);
         System.out.println("----------------------------------------");
         String[] parts = sajatNev.split(" ");
-        String kvNev = parts[0];
-        String kkNev = parts[1];
-        System.out.println("1. keresztnév kezdő pozíciója: ");
+        String vezNev = parts[0];
+        String keresztNev = parts[1];
+        String kkNev = parts[2];
+        System.out.println("1. keresztnév kezdő pozíciója: "+sajatNev.indexOf(keresztNev));
         System.out.println("----------------------------------------");
-        System.out.println("2. keresztnév kezdő pozíciója: ");
+        System.out.println("2. keresztnév kezdő pozíciója: "+sajatNev.indexOf(kNev));
         System.out.println("----------------------------------------");
-        System.out.println("Vezetékneved: "+kvNev);
+        System.out.println("Vezetékneved: "+vezNev);
         System.out.println("----------------------------------------");
-        System.out.println("Keresztneved : "+kkNev);
+        System.out.println("Keresztneved : "+keresztNev);
         System.out.println("----------------------------------------");
-        System.out.println("Vezetékneved hossza: "+kvNev.length());
+        System.out.println("Vezetékneved hossza: "+vezNev.length());
         System.out.println("----------------------------------------");
-        System.out.println("Keresztneved hossza: "+kkNev.length());
+        System.out.println("Keresztneved hossza: "+keresztNev.length()+", "+kkNev.length());
         System.out.println("----------------------------------------");
-        System.out.println("Névegyesítés (vezetéknév+keresztnév): ");
+        System.out.println("Névegyesítés (vezetéknév+keresztnév): "+vezNev+" "+keresztNev);
         System.out.println("----------------------------------------");
         System.out.println("Új név: ");
         System.out.println("----------------------------------------");
-        System.out.println("Monogram: ");
+        System.out.println("Monogram: "+vezNev.charAt(0)+kNev.charAt(0)+kkNev.charAt(0));
         System.out.println("----------------------------------------");
-        
-        
-        bemenet.close();
-    }
-    
-}
