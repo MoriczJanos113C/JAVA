@@ -48,7 +48,8 @@ class NFL{
         this.sikeres=Integer.parseInt(adatok[3]);
         this.tdPasszok=Integer.parseInt(adatok[4]);
         this.eladott=Integer.parseInt(adatok[5]);
-        this.iranyitomutato=Double.parseDouble(adatok[6]);
+        String replaceString = adatok[6].replace(",", ".");
+        this.iranyitomutato=Double.parseDouble(replaceString);
         this.egyetem=adatok[7];
     }
 }
