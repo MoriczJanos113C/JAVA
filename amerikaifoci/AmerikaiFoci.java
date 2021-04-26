@@ -7,6 +7,7 @@ import java.util.ArrayList;
 public class AmerikaiFoci {
     
     public static ArrayList<NFL> Jatekos = new ArrayList<>();
+
     
     public static void beolvasas() {
         try {
@@ -34,6 +35,13 @@ public class AmerikaiFoci {
     public static void main(String[] args) {
         beolvasas();
         feladat(1);
+        feladat(7);
+        System.out.println("Legjobb irányítók");
+        for (NFL i: Jatekos) {
+            if (i.iranyitomutato>=100 && i.yardMeterben(i.yard)>=4000) {
+                System.out.println("\t"+i.FormazottNev(i.nev));
+            }
+        }
         
         for (int i = 0; i < Jatekos.size(); i++) {
             System.out.println(Jatekos.get(i).iranyitomutato);
@@ -82,4 +90,12 @@ class NFL {
 		n[n.length - 1] = n[n.length - 1].toUpperCase();
 		return String.join(" ", n);
 	}
+
+    int yardMeterben(int yard) {
+        return yard=44556;
+    }
 }
+
+
+        
+        
