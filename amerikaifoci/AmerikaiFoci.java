@@ -1,54 +1,70 @@
 package amerikaifoci;
 
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class AmerikaiFoci {
     
     public static ArrayList<NFL> Jatekos = new ArrayList<>();
+    public static void beolvasas(){
+            try{
+                RandomAccessFile file = new RandomAccessFile("NFL_iranyitok.txt","r");
 
-    
-    public static void beolvasas() {
-        try {
-            RandomAccessFile fajl = new RandomAccessFile("NFL_iranyitok.txt", "r");
-            String elsoSor = fajl.readLine();
-            if (elsoSor.contains(";")) {
-                Jatekos.add(new NFL(elsoSor));
-            }else{
-                System.out.println(elsoSor);}
-            
-            while (fajl.getFilePointer() < fajl.length()) {
-                Jatekos.add(new NFL(fajl.readLine()));
+                while(file.getFilePointer()<file.length()){
+                Jatekos.add(new NFL(file.readLine())); 
             }
-            fajl.close();
-            System.out.println("\nBeolvasva " + Jatekos.size() + " rekord.");
-        } catch (IOException e) {
-            System.out.println("Hiba történt!");
+                file.close();
+                System.out.println("\nA statisztikában "+Jatekos.size()+" irányító szerepel!");
+
+
+            }
+            catch(IOException e){
+                System.out.println("e");
+            }
         }
-    }
-    public static void feladat(int feladatszam){
-        System.out.println("\n" + feladatszam + ". feladat");}
     
-    
+   
     
     public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        
         beolvasas();
-        feladat(1);
-        feladat(7);
-        System.out.println("Legjobb irányítók");
-        for (NFL i: Jatekos) {
-            if (i.iranyitomutato>=100 && i.yardMeterben(i.yard)>=4000) {
-                System.out.println("\t"+i.FormazottNev(i.nev));
+        System.out.println("A lejobb irányítók:");
+        for(NFL i : Jatekos){
+              if (i.iranyitomutato>=100 && i.yardMeterben(i.yard)>=4000){
+                    System.out.println("\t"+i.FormazottNev(i.nev));
+                }
             }
-        }
-        
-        for (int i = 0; i < Jatekos.size(); i++) {
-            System.out.println(Jatekos.get(i).iranyitomutato);
-        }
-        
-    }
+        System.out.println("Eladott labdák száma: ");
+        String eladott=sc.nextLine();
 
+        Integer.parseInt(eladott);
+        try {
+            FileWriter myWriter = new FileWriter("legtobbeladott.txt");
+            for(NFL i : Jatekos){
+                if(i.eladott>10){
+                ArrayList<String> jatekosnev= new ArrayList<>();
+                jatekosnev.add(i.nev);
+                Collections.sort(jatekosnev);
+                
+                for(String j : jatekosnev){
+                    myWriter.write(j+"\n");
+                }
+               
+                }
+            }
+            myWriter.close();
+        } catch (IOException ex) {
+            Logger.getLogger(AmerikaiFoci.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
 }
 
 class NFL {
@@ -75,25 +91,23 @@ class NFL {
         this.iranyitomutato = Double.parseDouble(replaceString);
         this.egyetem = adatok[7];
     }
-    /*private double Konvertal(String iranyitoMutato)
-    {
-        char decimalSeparator = System.Globalization.CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator;
-        iranyitoMutato = iranyitoMutato.Replace(",", decimalSeparator).Replace(".", decimalSeparator);
-        if (double.TryParse(iranyitoMutato, out var ertek))
-            return ertek;
-        throw new FormatException("Hibás érték (irányítómutató)");
-    }*/
+        private  double Konvertal(String iranyitoMutato){
+                return  Double.parseDouble(iranyitoMutato.replace(",", "."));
+            }
 	
+        public int yardMeterben(int yard){
+            double yardmeterben=yard*0.9144;
+            String asd=String.valueOf(Math.round(yardmeterben));
+            return Integer.parseInt(asd);
+        }
+
+    
 	public String FormazottNev(String nev)
 	{
-		String[] n = nev.split(" ");
+		String [] n = nev.split(" ");
 		n[n.length - 1] = n[n.length - 1].toUpperCase();
-		return String.join(" ", n);
+		return n[0]+" "+n[n.length - 1];
 	}
-
-    int yardMeterben(int yard) {
-        return yard=44556;
-    }
 }
 
 
