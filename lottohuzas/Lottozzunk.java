@@ -2,6 +2,7 @@
 package lottozzunk;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class Lottozzunk {
@@ -81,11 +82,27 @@ public class Lottozzunk {
         }
         System.out.println(s);
         
-        if(lotto==s){
-        System.out.println("\nNyertél!");
+        int talalat=0;
+        Iterator i = s.iterator();
+        while(i.hasNext()){
+            Iterator i2 = lotto.iterator();
+            int a = (int)i.next();
+            while(i2.hasNext()){
+                  int b= (int) i2.next();
+                      if(a==b){
+                           talalat++;
+                      }
+            } 
+        }
+        if(talalat!=0){
+            System.out.println("A sorsolt számok: "+s);
+            System.out.println("A te számaid: "+lotto);
+            System.out.println("Gartulálok " +talalat+"db találatod van!");
         }
         else{
-            System.out.println("Sajnos nem nyertél, sajnájuk!");
+            System.out.println("A sorsolt számok: "+s);
+            System.out.println("A te számaid: "+lotto);
+            System.out.println("Sajnos nem nyertél!");
         }
 
     }
